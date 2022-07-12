@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+</head>
+<body bgcolor = "#FFFFCC">
+    <h3 align ="center"> ODD OR EVEN </h3><table cellspacing = "2" cellpadding = "5" bgcolor="palegreen">
+        <form name = formtwo>
+            <td align = "center">
+                <center><BR />Enter a number: 
+                    <input type=text id="enter" name=enter maxlength="10" />
+                    <input type=button name = b3 value = "Click Here" onClick = compute() />
+                      <b>is<b> 
+                <input type=text id="outtxt" name=output size="5" value="" disabled /> </b></b></center><b><b>
+                <BR /><BR />
+            </b></b></td></form>
+        </table>
+
+    <script type='text/javascript'>
+
+        function compute()
+        {
+          var enter = document.getElementById("enter");
+          var outtxt = document.getElementById("outtxt");
+
+          var mynmb = enter.value;
+          if (isNaN(mynmb)) 
+          { 
+            outtxt.value = "error !!!"; 
+            alert( 'please enter a valid number');
+            enter.focus();
+            return;
+          }
+          else 
+          { 
+             if ( mynmb%2 == 0 ) { outtxt.value = "Even"; }  
+             if ( Math.abs(mynmb%2) == 1 ) { outtxt.value = "Odd"; }
+          }
+        }
+
+    </script>
+</body>
+</html>
